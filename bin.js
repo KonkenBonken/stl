@@ -41,7 +41,7 @@ buffer = Buffer.concat([buffer, ...polyArr]);
 console.log(buffer, bufferlength);
 
 
-fs.writeFile('test.stl', buffer, err => {
+fs.writeFile('bin.stl', buffer, err => {
 	if (err) return console.log(err);
 	console.log('saved');
 });
