@@ -5,11 +5,13 @@ const corners = 720;
 const step = 360 / corners;
 const polygons = Math.round(360 / step);
 const bufferlength = 84 + polygons * 50;
+const heights = Array(polygons).fill().map(() => Math.random().toFixed(4) - .5)
 
 function getPointInCircle(angle) {
 	x = radius * Math.sin(Math.PI * 2 * angle / 360).toFixed(4);
 	y = radius * Math.cos(Math.PI * 2 * angle / 360).toFixed(4);
-	z = 0; //Math.random().toFixed(4) - .5
+	// z = 0;
+	z = heights[angle / step] || heights[0];
 	return [x, y, z];
 };
 
